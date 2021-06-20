@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  db-user:
+    image: postgres
+    volumes: 
+      - ${HOME}/postgres-data/:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    command: 
+      postgres    
+    environment: 
+      POSTGRES_PASSWORD: Pass2020!  
+  db-stock:    
+    image: postgres
+    volumes: 
+      - ${HOME}/postgres-data-stock/:/var/lib/postgresql/data
+    ports:
+      - "5433:5433"
+    command: 
+      postgres -p 5433    
+    environment: 
+      POSTGRES_PASSWORD: postgres  
+  
