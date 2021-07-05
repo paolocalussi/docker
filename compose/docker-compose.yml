@@ -3,7 +3,7 @@ services:
   db-user:
     image: postgres
     volumes: 
-      - ${HOME}/postgres-data/:/var/lib/postgresql/data
+      - ./postgres-data/:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     command: 
@@ -13,7 +13,7 @@ services:
   db-stock:    
     image: postgres
     volumes: 
-      - ${HOME}/postgres-data-stock/:/var/lib/postgresql/data
+      - ./postgres-data-stock/:/var/lib/postgresql/data
     ports:
       - "5433:5433"
     command: 
